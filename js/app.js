@@ -17,7 +17,8 @@ start.addEventListener('click', resetDisplay);
 let keys = document.getElementsByClassName('key');
 document.getElementById("btn__reset").focus();
 for(var i=0; i < keys.length; i++){
-    keys[i].addEventListener('click',markButton)
+    keys[i].addEventListener('click', markButton)
+    keys[i].addEventListener('keypress', markButton)
 } 
 const keyb = document.getElementById('qwerty');
 keyb.style.display = 'block';
@@ -34,7 +35,7 @@ function resetDisplay() {
 }
 
 //disables keys that are pressed and calls handleInteraction()
-function markButton(){
+function markButton() {
     let thisGuess = event.target.textContent   
     newGame.handleInteraction(thisGuess);
 
